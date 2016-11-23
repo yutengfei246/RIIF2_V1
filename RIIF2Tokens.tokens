@@ -1,0 +1,13 @@
+StringLiteral=1
+FloatingPointLiteral=2
+DecimalLiteral=3
+Ident=4
+HierIdent=5
+AttrIdent=6
+AssocDecl=7
+AssocInstanceIdent=8
+AssocHierIdent=9
+AssocAttrIdent=10
+WS=11
+COMMENT=12
+LINE_COMMENT=13
