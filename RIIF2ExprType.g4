@@ -4,6 +4,7 @@
 grammar RIIF2ExprType;
 import RIIF2Keywords, RIIF2Tokens;
 
+
 /*RIIF-2: ANTlr.4 expression (Same with JAVA)*/
 expression
     : primary
@@ -48,6 +49,21 @@ primary
     | AssocHierIdent
     | literal
     | funcCall
+    ;
+
+/*RIIF-2: List Type*/
+listConstructor
+    : '{' constructorType ( ',' constructorType)* '}'
+    ;
+/*RIIF-2: Array Type*/
+arrayConstructor
+    : '[' constructorType ( ',' constructorType )* ']'
+    ;
+/*RIIF-2: constructor type*/
+constructorType
+    : listConstructor
+    | arrayConstructor
+    | expression
     ;
 
 funcCall

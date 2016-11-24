@@ -76,6 +76,18 @@ public class RIIF2BaseListener implements RIIF2Listener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
+	@Override public void enterAbstractFailModeDecl(RIIF2Parser.AbstractFailModeDeclContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitAbstractFailModeDecl(RIIF2Parser.AbstractFailModeDeclContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
 	@Override public void enterAbstractConstanceDecl(RIIF2Parser.AbstractConstanceDeclContext ctx) { }
 	/**
 	 * {@inheritDoc}
@@ -311,6 +323,42 @@ public class RIIF2BaseListener implements RIIF2Listener {
 	 * <p>The default implementation does nothing.</p>
 	 */
 	@Override public void exitPrimary(RIIF2Parser.PrimaryContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterListConstructor(RIIF2Parser.ListConstructorContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitListConstructor(RIIF2Parser.ListConstructorContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterArrayConstructor(RIIF2Parser.ArrayConstructorContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitArrayConstructor(RIIF2Parser.ArrayConstructorContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterConstructorType(RIIF2Parser.ConstructorTypeContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitConstructorType(RIIF2Parser.ConstructorTypeContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *

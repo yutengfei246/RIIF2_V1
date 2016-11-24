@@ -27,7 +27,6 @@ templateDecl
     : TEMPLATE Ident ( EXTENDS Ident)? ';'
       templateBodyElement* END_TEMPLATE
     ;
-
 /*RIIF-2: Template body statment */
 templateBodyElement
     : abstractDecl
@@ -40,17 +39,27 @@ abstractDecl
     | abstractParameterDecl
     | abstractAttributeDecl
     | abstractPlatformDecl
+    | abstractFailModeDecl
     | failModeDecl
+    ;
+abstractFailModeDecl
+    : ABSTRACT FAIL_MODE Ident ';'
     ;
 abstractConstanceDecl
     : ABSTRACT CONSTANT
-      (Ident|AssocInstanceIdent) ':' primitiveType
-      (':=' expression)? ';'
+      Ident ':' primitiveType
+      (':=' expression)? ';' //  abstract constant mConstant : integer := {1,2,3,4,....}
+    | ABSTRACT CONSTANT
+      Ident ':=' listConstructor
+       // abstract constant mConstant := {whatever , ... , ...}
     ;
 abstractParameterDecl
     : ABSTRACT PARAMETER
-      (Ident|AssocInstanceIdent) ':' complexType
+      Ident ':' complexType
       (':=' expression)? ';'
+    | ABSTRACT PARAMETER
+      Ident ':=' listConstructor
+
     ;
 abstractAttributeDecl
     : ABSTRACT (AttrIdent|AssocAttrIdent) ';'
@@ -69,7 +78,8 @@ imposeAssignment
       | AssocAttrIdent
       | AssocHierIdent
       )
-      vector? '=' expression ';'
+      vector? '=' (expression|listConstructor
+      ) ';'
     ;
 
 /*RIIF-2: Component Declaration */
@@ -101,7 +111,8 @@ setTemplate
       | AssocAttrIdent
       | AssocHierIdent
       )
-      '=' expression
+      '=' (expression|listConstructor
+      ) ';'
     ;
 
 /*RIIF-1: Environment declaration*/
@@ -124,7 +135,10 @@ requirementDecl
 
 /*RIIF-2: Parameter Declaration*/
 parameterDecl
-    : PARAMETER (Ident|AssocDecl) ':' complexType (':=' expression )? ';'
+    : PARAMETER Ident ':' complexType (':=' expression )? ';'
+    | PARAMETER AssocDecl
+    | PARAMETER Ident ':=' listConstructor
+
     ;
 
 /*RIIF-2: Environment Declaration*/
@@ -134,7 +148,10 @@ envParameterDecl
 
 /*RIIF-2: Constant Declaration*/
 constanceDecl
-    : CONSTANT (Ident|AssocDecl) ':' primitiveType (':=' expression)? ';'
+    : CONSTANT Ident ':' primitiveType (':=' expression)? ';'
+    | CONSTANT AssocDecl
+    | CONSTANT Ident ':=' listConstructor
+
     ;
 
 /*RIIF-2: Child Component*/
@@ -157,7 +174,7 @@ assignment
       | AssocAttrIdent
       | AssocHierIdent
       )
-      vector? '=' expression ';'
+      vector? '=' (expression|listConstructor) ';'
     ;
 
 /*RIIF-1: Assertions*/

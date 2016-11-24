@@ -58,6 +58,16 @@ public interface RIIF2Listener extends ParseTreeListener {
 	 */
 	void exitAbstractDecl(RIIF2Parser.AbstractDeclContext ctx);
 	/**
+	 * Enter a parse tree produced by {@link RIIF2Parser#abstractFailModeDecl}.
+	 * @param ctx the parse tree
+	 */
+	void enterAbstractFailModeDecl(RIIF2Parser.AbstractFailModeDeclContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link RIIF2Parser#abstractFailModeDecl}.
+	 * @param ctx the parse tree
+	 */
+	void exitAbstractFailModeDecl(RIIF2Parser.AbstractFailModeDeclContext ctx);
+	/**
 	 * Enter a parse tree produced by {@link RIIF2Parser#abstractConstanceDecl}.
 	 * @param ctx the parse tree
 	 */
@@ -257,6 +267,36 @@ public interface RIIF2Listener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	void exitPrimary(RIIF2Parser.PrimaryContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link RIIF2Parser#listConstructor}.
+	 * @param ctx the parse tree
+	 */
+	void enterListConstructor(RIIF2Parser.ListConstructorContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link RIIF2Parser#listConstructor}.
+	 * @param ctx the parse tree
+	 */
+	void exitListConstructor(RIIF2Parser.ListConstructorContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link RIIF2Parser#arrayConstructor}.
+	 * @param ctx the parse tree
+	 */
+	void enterArrayConstructor(RIIF2Parser.ArrayConstructorContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link RIIF2Parser#arrayConstructor}.
+	 * @param ctx the parse tree
+	 */
+	void exitArrayConstructor(RIIF2Parser.ArrayConstructorContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link RIIF2Parser#constructorType}.
+	 * @param ctx the parse tree
+	 */
+	void enterConstructorType(RIIF2Parser.ConstructorTypeContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link RIIF2Parser#constructorType}.
+	 * @param ctx the parse tree
+	 */
+	void exitConstructorType(RIIF2Parser.ConstructorTypeContext ctx);
 	/**
 	 * Enter a parse tree produced by {@link RIIF2Parser#funcCall}.
 	 * @param ctx the parse tree
